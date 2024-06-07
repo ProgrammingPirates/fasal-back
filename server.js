@@ -10,6 +10,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Define a route for the root URL
+app.get('/', (req, res) => {
+  res.send('API is running...');
+});
+
 app.use('/api/auth', require('./src/routes/authRoutes'));
 app.use('/api/lists', require('./src/routes/listRoutes'));
 
